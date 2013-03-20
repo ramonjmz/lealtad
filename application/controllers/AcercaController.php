@@ -15,7 +15,7 @@ class AcercaController extends Zend_Controller_Action
 
 
     public function sendAction(){
-    	
+    	// action 
     }    
 }
 
