@@ -1,0 +1,55 @@
+<div class="container content">
+    	<div class="row tryNowTeaser">
+        	<div class="span12">
+        	<h1>Modulo de usuarios <a class="btn primary" href="/users/create">Agregar	</a></h1>
+        	  	
+
+			<table>
+				<tr>
+					<td>Id</td>
+					<td>Nombre</td>
+					<td>Apellido</td>
+					<td>Fecha de creacion</td>
+					
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+
+				<?php if( count( $this->paginator )) :?>
+
+				<?php foreach( $this->paginator as $post) :?>
+
+				<tr>
+					<td><?php echo $post->id;?></td>
+					<td><?php echo $post->user_name;?></td>
+					<td><?php echo $post->first_name;?></td>
+					<td><?php echo $post->last_name;?></td>
+					<td><?php echo $post->date_entered;?></td>
+					
+					<td align="center"><a
+						href="/users/update/id/<?php echo $post->id ?>"><button
+								class="btn success">Editar</button> </a></td>
+					<td align="center"><a
+						href="/users/delete/id/<?php echo $post->id ?>"><button
+								class="btn danger">Borrar</button> </a></td>
+				</tr>
+
+
+				<?php endforeach;?>
+				<?php else : ?>
+				<tr>
+					<td colspan="3">No hay datos</td>
+				</tr>
+
+				<?php endif;?>
+
+
+			</table>
+			
+				<?php if( count( $this->paginator )):?>
+				<?php echo $this->paginator;?>
+				<?php endif;?>
+        	
+            </div>
+        </div>
+</div>
